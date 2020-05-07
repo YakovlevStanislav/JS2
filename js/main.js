@@ -5,7 +5,8 @@ const app = new Vue({
     data: {
         catalogUrl: '/catalogData.json',
         products: [],
-        imgCatalog: 'https://placehold.it/200x150'
+        imgCatalog: 'https://placehold.it/200x150',
+        searchline: []
     },
     methods: {
         getJson(url){
@@ -17,7 +18,10 @@ const app = new Vue({
         },
         addProduct(product){
             console.log(product.id_product);
-        }
+        },
+        filter(){
+            console.log('Нажали Enter');
+        },
     },
     mounted(){
         this.getJson(`${API + this.catalogUrl}`)
